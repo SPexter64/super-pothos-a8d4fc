@@ -1,0 +1,153 @@
+:root {
+    --grc-red: #cc0000; /* Rich Red */
+    --pure-white: #ffffff;
+    --light-gray: #f8f9fa;
+    --text-dark: #333333;
+    --text-muted: #666666;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: var(--pure-white);
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.login-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+/* KALIWA: Background Image Side */
+.visual-side {
+    flex: 1.5;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(204, 0, 0, 0.2)), 
+                url('./grcian.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    color: var(--pure-white);
+}
+
+.content-overlay h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.content-overlay h1 span {
+    color: var(--pure-white);
+    text-transform: uppercase;
+    font-weight: 900;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.school-tag {
+    background: var(--grc-red);
+    padding: 5px 15px;
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* KANAN: Login Form Side */
+.form-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--pure-white);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.form-header h2 {
+    font-size: 2.5rem;
+    color: var(--grc-red);
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.field input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    outline: none;
+    background: var(--light-gray);
+    transition: 0.3s;
+}
+
+.field input:focus {
+    border-color: var(--grc-red);
+    background: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--grc-red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #a30000;
+    transform: translateY(-2px);
+}
+
+.form-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.form-footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    color: var(--grc-red);
+}
+
+/* Mobile View */
+@media (max-width: 900px) {
+    .visual-side { display: none; }
+    .form-side { flex: 1; }
+}

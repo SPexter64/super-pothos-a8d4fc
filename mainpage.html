@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRC Student Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar" id="sidebar">
+        <div class="logo-section">
+          <div class="logo-info">
+            <h2>GRC</h2>
+            <p id="typing-text"></p>
+          </div>
+          <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        </div>
+
+        <ul class="menu">
+          <li class="active" data-page="dashboard">
+            <span>🏠</span> <span class="nav-text">Dashboard</span>
+          </li>
+          <li data-page="courses">
+            <span>📚</span> <span class="nav-text">Prospectus</span>
+          </li>
+          <li data-page="payments">
+            <span>💳</span> <span class="nav-text">Accounts</span>
+          </li>
+          <li data-page="settings">
+            <span>⚙️</span> <span class="nav-text">Settings</span>
+          </li>
+          <li
+            onclick="window.location.href = 'index.html'"
+            style="
+              margin-top: auto;
+              border-top: 1px solid #334155;
+              padding-top: 20px;
+            "
+          >
+            <span>🚪</span> <span class="nav-text">Logout</span>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-bar">
+          <h1 id="current-page-title">Dashboard</h1>
+          <div class="user-profile">
+            <span id="headerNameDisplay">Your name</span>
+            <div class="avatar" id="avatarDisplay"></div>
+          </div>
+        </header>
+
+        <div class="scroll-area">
+          <!-- DASHBOARD SECTION -->
+          <section id="dashboard" class="page active">
+            <div class="welcome-banner">
+              <h2>
+                Welcome back, <span class="userNameSpan">Emil John</span>!
+              </h2>
+              <p>School Year 2026-2027 | 1st Semester</p>
+            </div>
+
+            <div class="dashboard-grid">
+              <div class="stat-card">
+                <span class="label">Enrollment Status</span>
+                <p class="value status-enrolled">Officially Enrolled</p>
+              </div>
+              <div class="stat-card">
+                <span class="label">Course & Year</span>
+                <p class="value">BSIT - 2nd Year</p>
+              </div>
+              <div class="stat-card">
+                <span class="label">Section</span>
+                <p class="value">107</p>
+              </div>
+            </div>
+
+            <!-- NEW MISSION & VISION SECTION -->
+            <div class="mv-section">
+              <div class="mv-card mission">
+                <div class="mv-badge">MISSION</div>
+                <p>
+                  GRC is creating a culture for successful, socially
+                  responsible, morally upright skilled workers and highly
+                  competent professionals through values-based quality
+                  education.
+                </p>
+              </div>
+              <div class="mv-card vision">
+                <div class="mv-badge">VISION</div>
+                <p>A global community of excellent individuals with values.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- COURSES SECTION -->
+          <section id="courses" class="page">
+            <div class="page-header-flex">
+              <h2 style="color: var(--grc-red)">Academic Prospectus</h2>
+              <div class="search-wrapper">
+                <input
+                  type="text"
+                  id="subjectSearch"
+                  placeholder="🔍 Search Subject Code or Title..."
+                />
+              </div>
+            </div>
+            <div class="table-holder" style="margin-top: 20px">
+              <div class="semester-tag">
+                BSIT | Section 107 - Schedule of Classes
+              </div>
+              <div style="overflow-x: auto">
+                <table class="grc-table">
+                  <thead>
+                    <tr>
+                      <th>CODE</th>
+                      <th>DESCRIPTIVE TITLE</th>
+                      <th>UNITS</th>
+                      <th>SECTION</th>
+                      <th>DAY/S</th>
+                      <th>TIME</th>
+                      <th>ROOM</th>
+                    </tr>
+                  </thead>
+                  <tbody id="subjectList">
+                    <tr>
+                      <td>ITC</td>
+                      <td>Introduction to Computing LEC</td>
+                      <td>2</td>
+                      <td>107</td>
+                      <td>SAT</td>
+                      <td>7:30AM-9:30AM</td>
+                      <td>34935</td>
+                    </tr>
+                    <tr>
+                      <td>ITCL</td>
+                      <td>Introduction to Computing LAB</td>
+                      <td>1</td>
+                      <td>107</td>
+                      <td>THU</td>
+                      <td>10:30AM-1:30PM</td>
+                      <td>34933</td>
+                    </tr>
+                    <tr>
+                      <td>ITP1</td>
+                      <td>Computer Hardware and Troubleshooting LEC</td>
+                      <td>2</td>
+                      <td>107</td>
+                      <td>THU</td>
+                      <td>7:30AM-9:30AM</td>
+                      <td>34929</td>
+                    </tr>
+                    <tr>
+                      <td>ITP1L</td>
+                      <td>Computer Hardware and Troubleshooting LAB</td>
+                      <td>1</td>
+                      <td>107</td>
+                      <td>WED</td>
+                      <td>10:30AM-1:30PM</td>
+                      <td>34927</td>
+                    </tr>
+                    <tr>
+                      <td>ITP2</td>
+                      <td>Fundamentals of Programming LEC</td>
+                      <td>2</td>
+                      <td>107</td>
+                      <td>FRI</td>
+                      <td>7PM-9PM</td>
+                      <td>34939</td>
+                    </tr>
+                    <tr>
+                      <td>ITP2L</td>
+                      <td>Fundamentals of Programming LAB</td>
+                      <td>1</td>
+                      <td>107</td>
+                      <td>THU</td>
+                      <td>2PM-5PM</td>
+                      <td>34937</td>
+                    </tr>
+                    <tr>
+                      <td>KOMFIL</td>
+                      <td>Kontekswalisadong Komunikasyon</td>
+                      <td>3</td>
+                      <td>107</td>
+                      <td>WED</td>
+                      <td>1:30PM-4:30PM</td>
+                      <td>34947</td>
+                    </tr>
+                    <tr>
+                      <td>LEAD1</td>
+                      <td>Vision and Mission</td>
+                      <td>1.5</td>
+                      <td>107</td>
+                      <td>MON</td>
+                      <td>12PM-1:30PM</td>
+                      <td>34941</td>
+                    </tr>
+                    <tr>
+                      <td>MATHWRLD</td>
+                      <td>Mathematics in the Modern World</td>
+                      <td>3</td>
+                      <td>107</td>
+                      <td>MON</td>
+                      <td>6PM-9PM</td>
+                      <td>34945</td>
+                    </tr>
+                    <tr>
+                      <td>NSTP1</td>
+                      <td>National Service Training Program 1</td>
+                      <td>3</td>
+                      <td>107</td>
+                      <td>SAT</td>
+                      <td>1:30PM-4:30PM</td>
+                      <td>34953</td>
+                    </tr>
+                    <tr>
+                      <td>PATHFIT1</td>
+                      <td>Physical Activity Towards Health and Fitness</td>
+                      <td>2</td>
+                      <td>107</td>
+                      <td>WED</td>
+                      <td>7PM-9PM</td>
+                      <td>34949</td>
+                    </tr>
+                    <tr>
+                      <td>PHILHIST</td>
+                      <td>Readings in Philippine History</td>
+                      <td>3</td>
+                      <td>107</td>
+                      <td>THU</td>
+                      <td>6PM-9PM</td>
+                      <td>34951</td>
+                    </tr>
+                    <tr>
+                      <td>PURPCOMM</td>
+                      <td>Purposive Communication</td>
+                      <td>3</td>
+                      <td>107</td>
+                      <td>SAT</td>
+                      <td>6PM-9PM</td>
+                      <td>34955</td>
+                    </tr>
+                    <tr>
+                      <td>UNDSELF</td>
+                      <td>Understanding the Self</td>
+                      <td>3</td>
+                      <td>107</td>
+                      <td>MON</td>
+                      <td>3PM-6PM</td>
+                      <td>34943</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="total-row">
+                      <td colspan="2" style="text-align: right">
+                        TOTAL UNITS:
+                      </td>
+                      <td>30.5</td>
+                      <td colspan="4"></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- PAYMENTS SECTION -->
+          <section id="payments" class="page">
+            <div
+              class="announcement-box"
+              style="background: #fff5f5; border-left-color: var(--grc-red)"
+            >
+              <h3 style="color: var(--grc-red)">⚠️ Payment Reminder</h3>
+              <p>
+                Please pay at least <strong>50% (₱5,400)</strong> of your total
+                tuition before the <strong>Midterm Exams</strong> for COM
+                stamping.
+              </p>
+            </div>
+            <div class="dashboard-grid" style="margin-top: 20px">
+              <div class="stat-card">
+                <span class="label">Total Tuition (BSIT)</span>
+                <p class="value">₱10,800.00</p>
+              </div>
+              <div class="stat-card">
+                <span class="label">Total Paid</span>
+                <p class="value" style="color: #16a34a" id="totalPaidDisplay">
+                  ₱0.00
+                </p>
+              </div>
+              <div class="stat-card">
+                <span class="label">Balance</span>
+                <p
+                  class="value"
+                  style="color: var(--grc-red)"
+                  id="balanceDisplay"
+                >
+                  ₱10,800.00
+                </p>
+              </div>
+            </div>
+            <div class="table-holder" style="margin-top: 30px">
+              <div class="semester-tag">Official Payment History</div>
+              <div
+                class="stat-card"
+                style="
+                  margin-top: 20px;
+                  border-bottom: none;
+                  border-bottom-color: #16a34a;
+                "
+              >
+                <h3 style="color: #16a34a; margin-bottom: 15px">
+                  💳 Online Payment
+                </h3>
+                <div
+                  style="
+                    display: flex;
+                    gap: 15px;
+                    margin-bottom: 15px;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <div class="payment-option">
+                    <input
+                      type="radio"
+                      name="p-method"
+                      id="gcash"
+                      value="GCash"
+                      checked
+                    />
+                    <label for="gcash"><strong>GCash</strong></label>
+                  </div>
+                  <div class="payment-option">
+                    <input
+                      type="radio"
+                      name="p-method"
+                      id="maya"
+                      value="Maya"
+                    />
+                    <label for="maya"><strong>Maya</strong></label>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 10px">
+                  <input
+                    type="number"
+                    id="payAmount"
+                    class="form-input"
+                    placeholder="Enter Amount"
+                    style="max-width: 200px; margin-top: 0"
+                  />
+                  <button
+                    class="primary-red-btn"
+                    onclick="processOnlinePayment()"
+                    style="background: #16a34a; margin-top: 0"
+                  >
+                    Pay Now
+                  </button>
+                </div>
+              </div>
+              <table class="grc-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Reference No.</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="paymentHistory">
+                  <tr>
+                    <td>2026-04-20</td>
+                    <td>#OR-2024-9981</td>
+                    <td>₱3,000.00</td>
+                    <td>
+                      <button
+                        class="view-btn"
+                        onclick="
+                          viewReceipt('OR-2024-9981', '3,000.00', '2026-04-20')
+                        "
+                      >
+                        View Receipt
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- SETTINGS SECTION -->
+          <section id="settings" class="page">
+            <div class="stat-card" style="max-width: 500px">
+              <h3 style="color: var(--grc-red); margin-bottom: 20px">
+                Profile Settings
+              </h3>
+              <div style="margin-bottom: 15px">
+                <label class="label">Full Name</label>
+                <input
+                  type="text"
+                  id="inputName"
+                  class="form-input"
+                  placeholder="Enter Full Name"
+                />
+              </div>
+              <div style="margin-bottom: 15px">
+                <label class="label">Student ID</label>
+                <input
+                  type="text"
+                  value="2024-1025"
+                  readonly
+                  class="form-input"
+                  style="background: #f1f5f9"
+                />
+              </div>
+              <button
+                class="primary-red-btn"
+                onclick="saveProfile()"
+                style="width: auto; padding: 10px 30px"
+              >
+                Save Changes
+              </button>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- RECEIPT MODAL -->
+    <div id="receiptModal" class="modal">
+      <div class="modal-content receipt-style">
+        <div class="receipt-header">
+          <h3>GLOBAL RECIPROCAL COLLEGES</h3>
+          <p>Official Student Receipt</p>
+        </div>
+        <hr />
+        <div class="receipt-body">
+          <p><strong>Date:</strong> <span id="r-date"></span></p>
+          <p><strong>Student:</strong> <span class="userNameSpan"></span></p>
+          <p><strong>Reference No:</strong> <span id="r-ref"></span></p>
+          <p><strong>Course/Year:</strong> BSIT - 2nd Year</p>
+          <div class="amount-box">
+            <span>Amount Paid:</span>
+            <strong id="r-amt"></strong>
+          </div>
+        </div>
+        <p
+          style="
+            font-size: 11px;
+            margin-top: 15px;
+            color: #666;
+            text-align: center;
+          "
+        >
+          Valid for COM Stamping at the Registrar.
+        </p>
+        <div style="display: flex; gap: 10px; margin-top: 20px">
+          <button class="primary-red-btn" onclick="window.print()">
+            Print Receipt
+          </button>
+          <button class="view-btn" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

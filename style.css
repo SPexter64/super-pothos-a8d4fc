@@ -1,0 +1,480 @@
+:root {
+  --grc-red: #cc0000;
+  --grc-red-dark: #8b0000;
+  --pure-white: #ffffff;
+  --light-gray: #f1f5f9;
+  --text-main: #1e293b;
+  --sidebar-bg: #0f172a;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* BODY */
+body {
+  background:
+    linear-gradient(rgba(153, 124, 124, 0.3), rgba(255, 255, 255, 0.3)),
+    url("grcian.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-main);
+  overflow: hidden;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+  width: 85px;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #334155;
+  color: white;
+}
+
+.toggle-btn {
+  background: #334155;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* MENU */
+.menu {
+  margin-top: 30px;
+  list-style: none;
+}
+
+.menu li {
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+  color: #94a3b8;
+}
+
+.menu li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.menu li.active {
+  background: var(--grc-red);
+  color: white;
+  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+}
+
+.sidebar.collapsed .nav-text,
+.sidebar.collapsed .logo-info {
+  display: none;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+/* TOP BAR */
+.top-bar {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* SCROLL */
+.scroll-area {
+  padding: 40px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* PAGES */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* DASHBOARD */
+.welcome-banner {
+  background: linear-gradient(
+    135deg,
+    var(--grc-red) 0%,
+    var(--grc-red-dark) 100%
+  );
+  padding: 35px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  color: white;
+  box-shadow: 0 10px 20px rgba(204, 0, 0, 0.2);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border-bottom: 4px solid var(--grc-red);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card .label {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-card .value {
+  font-size: 24px;
+  font-weight: 800;
+  margin-top: 10px;
+  color: var(--text-main);
+}
+
+.status-enrolled {
+  color: #16a34a !important;
+}
+
+/* ANNOUNCEMENT */
+.announcement-box {
+  margin-top: 30px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 5px solid var(--grc-red);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.announcement-box h3 {
+  margin-bottom: 15px;
+  color: var(--grc-red);
+}
+
+/* SEARCH */
+.page-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-wrapper input {
+  padding: 12px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  width: 300px;
+  outline: none;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.search-wrapper input:focus {
+  border-color: var(--grc-red);
+}
+
+/* TABLE */
+.table-holder {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.semester-tag {
+  background: var(--grc-red);
+  color: white;
+  padding: 15px 25px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.grc-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.grc-table th {
+  background: #f8fafc;
+  text-align: left;
+  padding: 18px 25px;
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.grc-table td {
+  padding: 18px 25px;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--text-main);
+}
+
+.grc-table tr:hover {
+  background: #fff5f5;
+}
+
+.total-row {
+  background: #f8fafc;
+  font-weight: 800;
+  color: var(--grc-red);
+}
+
+.total-row td {
+  border-top: 2px solid var(--grc-red);
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 30px;
+  width: 350px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+.view-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 5px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.view-btn:hover {
+  background: var(--grc-red);
+  color: white;
+  border-color: var(--grc-red);
+}
+
+.primary-red-btn {
+  background: var(--grc-red);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* FORM */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-top: 5px;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--grc-red);
+}
+
+/* RECEIPT */
+.receipt-style {
+  text-align: left;
+  max-width: 400px;
+  border: 2px solid #eee;
+}
+
+.receipt-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.receipt-header h3 {
+  color: var(--grc-red);
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.receipt-header p {
+  font-size: 12px;
+  color: #666;
+}
+
+.receipt-body p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.amount-box {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-left: 5px solid #16a34a;
+  margin-top: 15px;
+}
+
+.amount-box strong {
+  font-size: 18px;
+  color: #16a34a;
+}
+
+/* PRINT */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #receiptModal,
+  #receiptModal * {
+    visibility: visible;
+  }
+
+  #receiptModal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+/* PAYMENT */
+.payment-option {
+  border: 1px solid #e2e8f0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+  accent-color: #16a34a;
+}
+
+.mv-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.mv-card {
+  background: var(
+    --sidebar-bg
+  ); /* Dark blue/black para maging premium tignan */
+  padding: 40px 30px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* Red glow effect sa hover */
+.mv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(204, 0, 0, 0.2);
+  border-color: var(--grc-red);
+}
+
+.mv-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--grc-red);
+  color: white;
+  padding: 8px 25px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 2px;
+  border-bottom-right-radius: 15px;
+}
+
+.mv-card p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Vision card special styling */
+.mv-card.vision p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
